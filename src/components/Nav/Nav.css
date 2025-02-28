@@ -1,0 +1,37 @@
+.navbar{
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px;
+gap: 30px;
+}
+
+.logo-image{
+width: 300px;
+height: 70px;
+}
+
+.logo-image:hover{
+    cursor: pointer;
+}
+
+.navbar-links{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 20px;
+}
+
+.navbar-links > li{
+text-transform: uppercase;
+font-family: 'karla', sans-serif;
+font-size: 18pt;
+font-weight: 500;
+/* font-size: 18pt;
+font-weight: 700; */
+}
+
+li:hover{
+    text-decoration: underline;
+    font-weight: 600;
+}
