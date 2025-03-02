@@ -44,7 +44,6 @@ button {
   height: 60px;
   background-color: #F4CE14;
   border-radius: 16px;
-  margin-top: 30px;
   font-family: 'Karla', sans-serif;
   font-size: 18pt;
   font-weight: 500;
@@ -53,4 +52,16 @@ button {
 .default-button-yellow:hover {
   cursor: pointer;
   font-weight: 600;
+}
+
+.para-text-l{
+  font-family: 'Karla', sans-serif;
+  font-size: 16pt;
+  line-height: 1.5;
+}
+
+.para-text-s{
+  font-family: 'Karla', sans-serif;
+  font-size: 14pt;
+  line-height: 1.5;
 }

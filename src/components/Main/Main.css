@@ -26,12 +26,6 @@
     margin-top: -30px;
 }
 
-.hero-text>p:nth-child(3) {
-    font-family: 'Karla', sans-serif;
-    font-size: 16pt;
-    line-height: 1.5;
-}
-
 .hero-image {
     position: absolute;
     width: 340px;

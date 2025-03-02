@@ -1,0 +1,27 @@
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: #495E57;
+}
+
+.footer {
+    width: 900px;
+    display: flex;
+    margin: 30px 0;
+    justify-content: space-between;
+}
+
+.doormat-nav>p,
+.contact>p,
+.social-media>p {
+    font-family: 'klara';
+    font-size: 16pt;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #F4CE14;
+}
+
+.social-media>ul>li>img {
+    width: 30px;
+    height: 30px;
+}
