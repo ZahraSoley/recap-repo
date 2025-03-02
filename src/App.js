@@ -1,20 +1,15 @@
 import './App.css';
-import Nav from './components/Nav/Nav';
-import Header from './components/Header/Header';
-import Main from './components/Main/Main';
-import Footer from './components/Footer/Footer';
-import Highlights from './components/Highlights/Highlights';
-import Testimonials from './components/Testimonials/Testimonials';
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/Home/Home';
+import Reserve from './pages/Reserve/Reserve';
 
 function App() {
   return (
     <>
-    <Nav/>
-    <Header/>
-    <Main/>
-    <Highlights/>
-    <Testimonials/>
-    <Footer/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/reserve-a-table' element={<Reserve/>}/>
+      </Routes>
     </>
   );
 }
