@@ -1,7 +1,7 @@
 import React from "react";
 import './Main.css'
 import hero from '../../assets/hero.jpg'
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Main = () => {
     const navigate = useNavigate();
