@@ -1,12 +1,13 @@
 import Nav from '../../components/Nav/Nav'
 import Footer from '../../components/Footer/Footer'
-import ReserveForm from '../../components/ReserveForm/ReserveForm'
+import ReserveFormInfo from '../../components/ReserveForm/ReserveFormInfo'
+
 
 const Reserve = () => {
   return (
     <div>
       <Nav/>
-      <ReserveForm/>
+      <ReserveFormInfo/>
       <Footer/>
     </div>
   )

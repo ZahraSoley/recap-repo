@@ -8,9 +8,9 @@ const Highlights = () => {
                 <p>This Week Specials!</p>
                 <button className='default-button-yellow'>Online Menu</button>
             </div>
-            <div className='bottom'>
+            {/* <div className='bottom'> */}
                 <DishCard/>
-            </div>
+            {/* </div> */}
         </section>
     )
 }

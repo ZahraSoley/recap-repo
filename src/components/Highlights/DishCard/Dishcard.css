@@ -2,7 +2,7 @@
     width: 900px;
     display: flex;
     /* justify-content: space-between; */
-    margin-top: 30px;
+    margin-top: 25px;
     display: flex;
     width: 900px;
     gap: 50px;
@@ -10,6 +10,7 @@
     /* Enable horizontal scrolling */
     scrollbar-width: thin;
     /* Optional: Thin scrollbar for Firefox */
+    padding: 10px;
 }
 
 .Dish-Card {

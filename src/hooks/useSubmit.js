@@ -26,9 +26,6 @@ const useSubmit = () => {
         }
     }
 
-    return { submit, response, isLoading }
+    return { submit, response, isLoading, setIsLoading }
 }
 export default useSubmit;
-
-
-
