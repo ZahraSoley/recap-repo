@@ -5,17 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 //after installing react-router-dom and chakra+other chakra related things in terminal we import it here
 import { BrowserRouter } from 'react-router-dom';
-import { ChakraProvider } from '@chakra-ui/react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   //we wrap the App in browser router and chakra provider
   <BrowserRouter>
-    <ChakraProvider>
       <React.StrictMode>
         <App />
       </React.StrictMode>
-    </ChakraProvider>
   </BrowserRouter>
 );
 
