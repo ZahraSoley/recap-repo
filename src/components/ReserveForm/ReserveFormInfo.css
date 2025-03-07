@@ -73,7 +73,7 @@
     border: none;
     outline: none;
     box-shadow: none;
-    
+    /* Removes any shadow */
     scrollbar-width: none;
     height: 100px;
     margin-top: -15px;

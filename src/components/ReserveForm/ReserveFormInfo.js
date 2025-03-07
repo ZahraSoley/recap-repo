@@ -3,14 +3,17 @@ import { useEffect } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import useSubmit from '../../hooks/useSubmit'
+import { useNavigate } from 'react-router-dom'
 
-const ReserveFormInfo = () => {
+const ReserveFormInfo = ({ setFormData }) => {
 
-  const { submit, response, isLoading, setIsLoading } = useSubmit()
+  const { submit, response, isLoading} = useSubmit()
+
+  const navigate = useNavigate()
 
   useEffect(() => {
-    console.log("isLoading:", isLoading);
-  }, [isLoading]);
+    if (response && response.type === 'success') { navigate('/confirm') }
+  }, [response]);
 
   const formik = useFormik({
 
@@ -18,6 +21,7 @@ const ReserveFormInfo = () => {
       guests: '',
       date: '',
       time: '',
+      occasion: '',
       fullName: '',
       email: '',
       phoneNumber: '',
@@ -26,12 +30,15 @@ const ReserveFormInfo = () => {
 
     onSubmit: (values) => {
       submit(values, 2000)
+      setFormData(values)
+      //navigate('/confirm') if i use this i dont see the spinner
     },
 
     validationSchema: Yup.object().shape({
       guests: Yup.string().required('Required!'),
       date: Yup.string().required('Required!'),
       time: Yup.string().required('Required!'),
+      occasion: Yup.string().required('Required!'),
       fullName: Yup.string()
         .min(4, 'Full name has to be at least four characters!')
         .required('Required!'),
@@ -39,7 +46,6 @@ const ReserveFormInfo = () => {
         .email('Invalid email address!')
         .required('Required!'),
       phoneNumber: Yup.string()
-        .matches(/^\d+$/, 'Must contain only digits!') // Ensure only numbers
         .min(7, 'Too short!')
         .max(15, 'Too long!')
         .required('Required!'),
@@ -62,7 +68,7 @@ const ReserveFormInfo = () => {
 
           {...formik.getFieldProps('guests')}
         >
-          <option value=''disabled>select number of guests</option>
+          <option value='' disabled>select number of guests</option>
           <option >1-2</option>
           <option >2-4</option>
           <option >4-8</option>
@@ -99,6 +105,21 @@ const ReserveFormInfo = () => {
           <option >Dinner: 9-10</option>
         </select>
         <p>{formik.errors.time && formik.touched.time ? formik.errors.time : null}</p>
+
+        <div className="lable-star">
+          <span>{formik.errors.occasion && formik.touched.occasion ? '*' : null}</span>
+          <label htmlFor="occasion">Occasion</label>
+        </div>
+        <select
+          id='occasion'
+          {...formik.getFieldProps('occasion')}
+        >
+          <option value='' disabled>choose an option</option>
+          <option >Birthday</option>
+          <option >Anniversary</option>
+          <option >Engagement</option>
+        </select>
+        <p>{formik.errors.occasion && formik.touched.occasion ? formik.errors.occasion : null}</p>
 
         <div className="lable-star">
           <span>{formik.errors.fullName && formik.touched.fullName ? '*' : null}</span>
